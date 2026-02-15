@@ -1,0 +1,61 @@
+:host {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #6c757d;
+  color: white;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #5a6268;
+}
+
+h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+span[ngClass] {
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+span.acceptee {
+  background: #c8e6c9;
+  color: #2e7d32;
+}
+
+span.refusee {
+  background: #ffcdd2;
+  color: #c62828;
+}
+
+span.en_attente {
+  background: #fff9c4;
+  color: #f57f17;
+}
+
+label {
+  font-weight: bold;
+  color: #666;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: #666;
+  line-height: 1.8;
+}

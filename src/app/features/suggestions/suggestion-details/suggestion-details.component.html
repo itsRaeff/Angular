@@ -1,0 +1,39 @@
+<div *ngIf="suggestion">
+  <button (click)="goBack()">← Back to list</button>
+  
+  <div>
+    <h2>{{ suggestion.title }}</h2>
+    
+    <div>
+      <div>
+        <label>Category:</label>
+        <span>{{ suggestion.category }}</span>
+      </div>
+      
+      <div>
+        <label>Status:</label>
+        <span [ngClass]="suggestion.status">{{ suggestion.status }}</span>
+      </div>
+      
+      <div>
+        <label>Date:</label>
+        <span>{{ suggestion.date | date:'d MMM yyyy' }}</span>
+      </div>
+      
+      <div>
+        <label>Likes:</label>
+        <span>{{ suggestion.nbLikes }}</span>
+      </div>
+    </div>
+
+    <div>
+      <h3>Description</h3>
+      <p>{{ suggestion.description }}</p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!suggestion">
+  <p>Suggestion not found</p>
+  <button (click)="goBack()">← Back to list</button>
+</div>

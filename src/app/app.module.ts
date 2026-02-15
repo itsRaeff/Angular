@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
-import { ListSuggestionComponent } from './list-suggestion/list-suggestion.component';
+import { NotfoundComponent } from './core/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { ListSuggestionComponent } from './list-suggestion/list-suggestion.compo
     HeaderComponent,
     HomeComponent,
     FooterComponent,
-    ListSuggestionComponent
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,

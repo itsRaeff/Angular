@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
-import { Suggestion } from '../models/suggestion';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Suggestion } from '../../../models/suggestion';
 
 @Component({
-  selector: 'app-list-suggestion',
-  templateUrl: './list-suggestion.component.html',
-  styleUrls: ['./list-suggestion.component.css']
+  selector: 'app-suggestion-details',
+  templateUrl: './suggestion-details.component.html',
+  styleUrl: './suggestion-details.component.css'
 })
-export class ListSuggestionComponent {
+export class SuggestionDetailsComponent implements OnInit {
+  suggestion: Suggestion | undefined;
+  
   suggestions: Suggestion[] = [
     {
       id: 1,
@@ -46,21 +49,19 @@ export class ListSuggestionComponent {
     }
   ];
 
-  searchTerm: string = '';
-  favorites: Suggestion[] = [];
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
-  onLike(suggestion: Suggestion): void {
-    suggestion.nbLikes++;
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      const id = params['id'];
+      this.suggestion = this.suggestions.find(s => s.id === parseInt(id));
+    });
   }
 
-  onAddToFavorites(suggestion: Suggestion): void {
-    this.favorites.push(suggestion);
-  }
-
-  getFilteredSuggestions(): Suggestion[] {
-    return this.suggestions.filter(suggestion =>
-      suggestion.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-      suggestion.category.toLowerCase().includes(this.searchTerm.toLowerCase())
-    );
+  goBack(): void {
+    this.router.navigate(['/suggestions']);
   }
 }
