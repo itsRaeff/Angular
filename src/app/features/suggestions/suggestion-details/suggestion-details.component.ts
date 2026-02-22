@@ -61,6 +61,22 @@ export class SuggestionDetailsComponent implements OnInit {
     });
   }
 
+  goNext(): void {
+    if (this.suggestion) {
+      const currentIndex = this.suggestions.findIndex(s => s.id === this.suggestion!.id);
+      if (currentIndex < this.suggestions.length - 1) {
+        const nextId = this.suggestions[currentIndex + 1].id;
+        this.router.navigate(['/suggestions', nextId]);
+      }
+    }
+  }
+
+  hasNext(): boolean {
+    if (!this.suggestion) return false;
+    const currentIndex = this.suggestions.findIndex(s => s.id === this.suggestion!.id);
+    return currentIndex < this.suggestions.length - 1;
+  }
+
   goBack(): void {
     this.router.navigate(['/suggestions']);
   }
