@@ -52,6 +52,10 @@ export class SuggestionsListComponent {
 
   constructor(private router: Router) {}
 
+  ajouterSuggestion() {
+    this.router.navigate(['/suggestions/add']);
+  }
+
   onLike(suggestion: Suggestion): void {
     suggestion.nbLikes++;
   }

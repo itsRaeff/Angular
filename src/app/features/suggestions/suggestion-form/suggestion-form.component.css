@@ -1,0 +1,63 @@
+.container {
+  max-width: 550px;
+  margin: 30px auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.champ {
+  margin-bottom: 18px;
+}
+
+.champ label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.champ input,
+.champ textarea,
+.champ select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.champ textarea {
+  resize: vertical;
+}
+
+.champ input[readonly] {
+  background-color: #f5f5f5;
+  color: #555;
+}
+
+.erreur small {
+  color: red;
+  font-size: 12px;
+}
+
+button[type="submit"] {
+  background-color: #2196F3;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button[type="submit"]:disabled {
+  background-color: #90CAF9;
+  cursor: not-allowed;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background-color: #1976D2;
+}
