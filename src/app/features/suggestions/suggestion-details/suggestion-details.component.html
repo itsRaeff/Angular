@@ -1,7 +1,7 @@
 <div *ngIf="suggestion">
   <div style="display: flex; gap: 10px; margin-bottom: 20px;">
     <button (click)="goBack()">← Back to list</button>
-    <button (click)="goNext()" [disabled]="!hasNext()">Next →</button>
+    <button (click)="allerModifier()">✏️ Update</button>
   </div>
   
   <div>

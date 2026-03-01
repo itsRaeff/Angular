@@ -41,6 +41,6 @@
       <input type="text" formControlName="status" readonly>
     </div>
 
-    <button type="submit" [disabled]="suggestionForm.invalid">Soumettre</button>
+    <button type="submit" [disabled]="suggestionForm.invalid">{{ id ? 'Sauvegarder' : 'Soumettre' }}</button>
   </form>
 </div>
